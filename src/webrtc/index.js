@@ -345,7 +345,7 @@ clearMsg.addEventListener('click', () => {
   msg.innerHTML = ''
 })
 textTextarea.addEventListener('keyup', (e) => {
-  if(e.keyCode === 13 && roomUsers.length>1){
+  if(e.keyCode === 13){
     send()
   }
 })
@@ -374,17 +374,17 @@ function displaysmsg(evt, my){
 function send(){
   let value = textTextarea.value
   let color = textColor.value
-  if(value && roomUsers.length>1 && value.trim().length != 0){
+  if(value && value.trim().length != 0){
     let obj={}
-    for(let id in dataChannels){
-      obj.type = 'msg'
-      obj.data = value
-      obj.name = myUser
-      obj.color = color
-      dataChannels[id].send(JSON.stringify(obj))
-    }
+    obj.type = 'msg'
+    obj.data = value
+    obj.name = myUser
+    obj.color = color
     displaysmsg(obj, true)
     textTextarea.value = ''
+    for(let id in dataChannels){
+      dataChannels[id].send(JSON.stringify(obj))
+    }
   }
 }
 
