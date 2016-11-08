@@ -228,7 +228,7 @@ function sendCandidate(candidate) {
 
 function prepareNewConnection(id) {
     var conn = new Connection();
-    var pc_config = {"iceServers": [{"url": "stun:stun.l.google.com:19302"}, {"url": "stun:203.183.172.196:3478"}]};
+    var pc_config = {"iceServers": [{"url": "stun:stun.voipbuster.com"}, {"url": "stun:203.183.172.196:3478"}, {"url": "stun:stun.l.google.com:19302"}]};
     try {
         conn.peerconnection = new RTCPeerConnection(pc_config);
     } catch (e) {
