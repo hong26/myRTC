@@ -580,7 +580,7 @@ function newNotification(title, body, icon) {
 
 document.getElementById('notice').addEventListener('click', function(){
   let value = textTextarea.value
-  if(roomUsers.length>1 && value.trim().length != 0){
+  if(value.trim().length != 0){
     let obj={}
     obj.type = 'notice'
     obj.data = value
