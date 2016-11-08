@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>webrtc</title>
+  <meta charset="utf-8">
+<!--   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body class='webrtc-body'>
+  <div class='users-list'>
+    <h3 class='users-list-title'>用户列表</h3>
+    <div class='users-list-users' id = 'users-list' >
+      <p style='margin-left: 0.5em; font-weight: 900'>大灰狼</p>
+      <p style='margin-left: 0.5em; font-weight: 900'>小白兔</p>
+    </div>
+  </div>
+  <div id="main">
+    <h1 class='text-title'>webRTC</h1>
+    <div id='msg' class='text-msg'>
+      <li style='padding-top:1em; margin-left: 0.5em; list-style: none;webgl.html'>me: </li>
+      <li style='padding-top:0.5em; margin-left: 0.5em; list-style: none;'>test</li>
+      <li style='padding-top:1em; margin-left: 0.5em; list-style: none;'>me: </li>
+      <li style='padding-top:0.5em; margin-left: 0.5em; list-style: none;'>test</li>
+    </div>
+    <div id='emojiWrapper'></div>
+    <div class='text-controls'>
+      <input type='color' placeHolder='#000' title="选择字体颜色" class='text-controls-itme' id='text-color'/>
+      <button id='emoji'>表情</button>
+      <button class='controls-itme-label' id='text-file-button'>
+        发送文件
+        <input id='text-file' type="file" />
+      </button>
+      <button id='notice'>桌面通知</button>
+      <button id='open-video'>视频</button>
+      <button id='clear-msg'>清屏</button>
+    </div>
+    <div class='text-input-box'>
+      <textarea id="text-textarea" placeHolder="说点什么呢?"></textarea>
+      <input type='button' id='text-send' value='发送' />
+    </div>
+  </div>
+  <div id='login'>
+    <p id='login-server'>服务器准备中......</p>
+    <div id='login-box'>
+      <input id='login-user' type='text' placeholder='请输入一个用户名'/>
+      <input id='login-user-button' type='button' value='确定' />
+    </div>
+  </div>
+  <script src="/build/webrtc.js"></script>
+</body>
+</html>

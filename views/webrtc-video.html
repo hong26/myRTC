@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>webrtc</title>
+  <meta charset="utf-8">
+        <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div id="main">
+    <div class='webrtc'>
+      <h1 style='text-align: center'>视频通信</h1>
+      <div class='webrtc-div'>
+          <video id="local-video" autoplay class='webrtc-video-1' poster='/images/bg.jpg'></video>
+      </div>
+      <div class='webrtc-div'>
+        <button type="button" class='webrtc-button font-size-12px' id='startvideo'>开始捕获视频信息</button>
+        <button type="button" id='stopvideo' class='font-size-12px'>停止捕获视频信息</button>
+        <span style='margin-left: 5em;'></span>
+        <button type="button" class='webrtc-button font-size-12px' id='call'>建立连接</button>
+        <button type="button" id='hangup' class='font-size-12px'>挂断</button>
+      </div>
+      <div class='webrtc-div'>
+        <video id="remote-video-0" autoplay class='webrtc-remote-video' poster='/images/bg.jpg'></video>
+        <video id="remote-video-1" autoplay class='webrtc-remote-video' poster='/images/bg.jpg'></video>
+        <video id="remote-video-2" autoplay class='webrtc-remote-video' poster='/images/bg.jpg'></video>
+      </div>
+    </div>
+  </div>
+  <script src="/build/webrtcVideo.js"></script>
+</body>
+</html>
