@@ -582,14 +582,14 @@ document.getElementById('notice').addEventListener('click', function(){
   let value = textTextarea.value
   if(roomUsers.length>1 && value.trim().length != 0){
     let obj={}
-    for(let id in dataChannels){
-      obj.type = 'notice'
-      obj.data = value
-      obj.name = myUser
-      dataChannels[id].send(JSON.stringify(obj))
-    }
+    obj.type = 'notice'
+    obj.data = value
+    obj.name = myUser
     newNotification(myUser, value)
     textTextarea.value = ''
+    for(let id in dataChannels){
+      dataChannels[id].send(JSON.stringify(obj))
+    }
   }
 })
 
@@ -597,10 +597,10 @@ document.getElementById('open-video').addEventListener('click', (e) => {
   if(roomUsers.length>1){
     let obj = {}
     let href = '/webrtcvideo?'+getRoomName()
+    obj.type = 'openvideo'
+    obj.href = href
+    obj.name = myUser
     for(let id in dataChannels){
-      obj.type = 'openvideo'
-      obj.href = href
-      obj.name = myUser
       dataChannels[id].send(JSON.stringify(obj))
     }
     let link = document.createElement('a')
